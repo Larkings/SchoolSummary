@@ -8,110 +8,71 @@ public class teacher extends Person {
     String mail;
     String subject;
 
-    @SuppressWarnings("unchecked")
-    void freshstart (){
+    void freshstart () {
+        boolean original = true;
         ArrayList subjects = new ArrayList();
         Scanner subput = new Scanner(System.in);
-        System.out.println("What subjects do you give? (Math, Science, Dutch, English, France," +
-                " IT, Pe, Biology, Economics)");
-        Scanner answer = new Scanner(System.in);
-        subject = subput.nextLine();
-        boolean x = true;
-        do {
-            if (subject.equals("Math")){
-                subjects.add(subject);
-                System.out.println("Do you give more subjects?");
-                String arrayAnswer = answer.next();
-                if (arrayAnswer.equals("yes")){
-                    System.out.println("Which subject do you also give?");
-                    subject = subput.nextLine();
-                    subjects.add(subject);
-                    System.out.println(subjects);
-                } else {
-                    x = true;
-                }
+       do {
+           boolean x = true;
+           boolean b = true;
+           boolean a = true;
+           System.out.println("What subjects do you give? (Math, Science, Dutch, English, France," +
+                   " IT, PE, Biology, Economics)");
+           Scanner answer = new Scanner(System.in);
+           subject = subput.nextLine();
+           do {
+               if (subject.equals(("Math")) || subject.equals("math") || subject.equals("Science") || subject.equals("science") ||
+                       subject.equals("Dutch") || subject.equals("dutch") ||subject.equals("english") || subject.equals("france") ||
+                       subject.equals("English") || subject.equals("France") || subject.equals("IT") || subject.equals("it") ||
+                       subject.equals("PE") || subject.equals("pe") || subject.equals("biology") || subject.equals("economics") ||
+                       subject.equals("Biology") || subject.equals("Economics")) {
+                   subjects.add(subject);
+                   x = true;
+                   original = true;
+                   do {
+                       System.out.println("Do you give more subjects?");
+                       String arrayAnswer = answer.next();
+                       if (arrayAnswer.equals("yes") || (arrayAnswer.equals("Yes"))) {
+                           System.out.println("Which subject do you also give?");
+                           subject = subput.nextLine();
+                           subjects.add(subject);
+                           b = false;
+                       } else if(arrayAnswer.equals("No") || (arrayAnswer.equals("no"))){
+                           b = true;
+                       } else {
+                           System.out.println("You can only answer yes or no.");
+                           b = false;
+                       }
+                   } while (!b);
+               } else {
+                   System.out.println("That isn't a subject given on this school.");
+                   x = false;
+               }
 
-            } else if(subject.equals("Science")){
-                subjects.add(subject);
-                System.out.println("Do you give more subjects?");
-                String arrayAnswer = answer.next();
-                if (arrayAnswer.equals("yes")){
-                    x = true;
-                } else {
-                    x = false;
-                }
-            } else if(subject.equals("Dutch")){
-                subjects.add(subject);
-                System.out.println("Do you give more subjects?");
-                String arrayAnswer = answer.next();
-                if (arrayAnswer.equals("yes")){
-                    x = true;
-                } else {
-                    x = false;
-                }
-            } else if(subject.equals("English")){
-                subjects.add(subject);
-                System.out.println("Do you give more subjects?");
-                String arrayAnswer = answer.next();
-                if (arrayAnswer.equals("yes")){
-                    x = true;
-                } else {
-                    x = false;
-                }
-            } else if(subject.equals("France")){
-                subjects.add(subject);
-                System.out.println("Do you give more subjects?");
-                String arrayAnswer = answer.next();
-                if (arrayAnswer.equals("yes")){
-                    x = true;
-                } else {
-                    x = false;
-                }
-            } else if(subject.equals("IT")){
-                subjects.add(subject);
-                System.out.println("Do you give more subjects?");
-                String arrayAnswer = answer.next();
-                if (arrayAnswer.equals("yes")){
-                    x = true;
-                } else {
-                    x = false;
-                }
-            } else if(subject.equals("PE")){
-                subjects.add(subject);
-                System.out.println("Do you give more subjects?");
-                String arrayAnswer = answer.next();
-                if (arrayAnswer.equals("yes")){
-                    x = true;
-                } else {
-                    x = false;
-                }
-            } else if(subject.equals("Biology")){
-                subjects.add(subject);
-                System.out.println("Do you give more subjects?");
-                String arrayAnswer = answer.next();
-                if (arrayAnswer.equals("yes")){
-                    x = true;
-                } else {
-                    x = false;
-                }
-            } else if(subject.equals("Economics")){
-                subjects.add(subject);
-                System.out.println("Do you give more subjects?");
-                String arrayAnswer = answer.next();
-                if (arrayAnswer.equals("yes")){
-                    x = true;
-                } else {
-                    x = false;
-                }
+               do {
+                   System.out.println("So you teach the subject(s) " + subjects +" is that corect?" );
+                   Scanner verify = new Scanner(System.in);
+                   String verified = verify.nextLine();
+                   if (verified.equals("Yes") || verified.equals("yes")){
+                       a = true;
+                   } else if (verified.equals("No") || verified.equals("no")){
+                       subjects. clear();
+                       System.out.println("Your input will be cleared, start again and add the correct subject(s).");
+                       a = true;
+                       original = false;
+                   } else {
+                       System.out.println("You can only answer yes or no.");
+                       a = false;
+                   }
+               } while (!a);
+           }
+           while (!x);
 
-            } else {
-                System.out.println("That isn't a subject given on this school.");
-            } ;
-        }
-        while(!x);
+       } while (!original);
 
+        System.out.println("Here is a quick summary:");
+    }
 
-    };
 
     void allready(){
 
