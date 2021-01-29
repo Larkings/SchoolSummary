@@ -29,14 +29,8 @@ public class Person {
                         state = yesStatePut.nextLine();
                         switch (state) {
                             case "Teacher", "teacher" -> {
-
-
-
-
-
-
-
-
+                                teacher teacher = new teacher();
+                                teacher.freshstart();
 
 
                                 x = true;

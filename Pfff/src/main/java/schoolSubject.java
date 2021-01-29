@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class schoolSubject /*implements SubjectCharacteristics*/ {
 
-    void subjectQuestion() {
+    /*void subjectQuestion() {
         Scanner input = new Scanner(System.in);
         ArrayList subjects = new ArrayList();
         System.out.println("What subject(s) do you give?");
@@ -95,7 +95,7 @@ public class schoolSubject /*implements SubjectCharacteristics*/ {
         while(!x);
 
 
-   /* @Override
+    @Override
     public void studentsInClass() {
         for(int i=0; i<subjects.length; i++){
             System.out.println();
@@ -107,4 +107,3 @@ public class schoolSubject /*implements SubjectCharacteristics*/ {
         return 0;
     }*/
     }
-}

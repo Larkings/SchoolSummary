@@ -8,16 +8,31 @@ public class teacher extends Person {
     String mail;
     String subject;
 
+    @SuppressWarnings("unchecked")
     void freshstart (){
         ArrayList subjects = new ArrayList();
         Scanner subput = new Scanner(System.in);
-        System.out.println("What subjects do you give?");
+        System.out.println("What subjects do you give? (Math, Science, Dutch, English, France," +
+                " IT, Pe, Biology, Economics)");
+        Scanner answer = new Scanner(System.in);
         subject = subput.nextLine();
+        boolean x = true;
         do {
-            if (subjectAnswers.equals("Math")){
-                subjects.add(subjectAnswers);
-            } else if(subjectAnswers.equals("Science")){
-                subjects.add(subjectAnswers);
+            if (subject.equals("Math")){
+                subjects.add(subject);
+                System.out.println("Do you give more subjects?");
+                String arrayAnswer = answer.next();
+                if (arrayAnswer.equals("yes")){
+                    System.out.println("Which subject do you also give?");
+                    subject = subput.nextLine();
+                    subjects.add(subject);
+                    System.out.println(subjects);
+                } else {
+                    x = true;
+                }
+
+            } else if(subject.equals("Science")){
+                subjects.add(subject);
                 System.out.println("Do you give more subjects?");
                 String arrayAnswer = answer.next();
                 if (arrayAnswer.equals("yes")){
@@ -25,8 +40,8 @@ public class teacher extends Person {
                 } else {
                     x = false;
                 }
-            } else if(subjectAnswers.equals("Dutch")){
-                subjects.add(subjectAnswers);
+            } else if(subject.equals("Dutch")){
+                subjects.add(subject);
                 System.out.println("Do you give more subjects?");
                 String arrayAnswer = answer.next();
                 if (arrayAnswer.equals("yes")){
@@ -34,8 +49,8 @@ public class teacher extends Person {
                 } else {
                     x = false;
                 }
-            } else if(subjectAnswers.equals("English")){
-                subjects.add(subjectAnswers);
+            } else if(subject.equals("English")){
+                subjects.add(subject);
                 System.out.println("Do you give more subjects?");
                 String arrayAnswer = answer.next();
                 if (arrayAnswer.equals("yes")){
@@ -43,8 +58,8 @@ public class teacher extends Person {
                 } else {
                     x = false;
                 }
-            } else if(subjectAnswers.equals("France")){
-                subjects.add(subjectAnswers);
+            } else if(subject.equals("France")){
+                subjects.add(subject);
                 System.out.println("Do you give more subjects?");
                 String arrayAnswer = answer.next();
                 if (arrayAnswer.equals("yes")){
@@ -52,8 +67,8 @@ public class teacher extends Person {
                 } else {
                     x = false;
                 }
-            } else if(subjectAnswers.equals("IT")){
-                subjects.add(subjectAnswers);
+            } else if(subject.equals("IT")){
+                subjects.add(subject);
                 System.out.println("Do you give more subjects?");
                 String arrayAnswer = answer.next();
                 if (arrayAnswer.equals("yes")){
@@ -61,8 +76,8 @@ public class teacher extends Person {
                 } else {
                     x = false;
                 }
-            } else if(subjectAnswers.equals("PE")){
-                subjects.add(subjectAnswers);
+            } else if(subject.equals("PE")){
+                subjects.add(subject);
                 System.out.println("Do you give more subjects?");
                 String arrayAnswer = answer.next();
                 if (arrayAnswer.equals("yes")){
@@ -70,8 +85,8 @@ public class teacher extends Person {
                 } else {
                     x = false;
                 }
-            } else if(subjectAnswers.equals("Biology")){
-                subjects.add(subjectAnswers);
+            } else if(subject.equals("Biology")){
+                subjects.add(subject);
                 System.out.println("Do you give more subjects?");
                 String arrayAnswer = answer.next();
                 if (arrayAnswer.equals("yes")){
@@ -79,8 +94,8 @@ public class teacher extends Person {
                 } else {
                     x = false;
                 }
-            } else if(subjectAnswers.equals("Economics")){
-                subjects.add(subjectAnswers);
+            } else if(subject.equals("Economics")){
+                subjects.add(subject);
                 System.out.println("Do you give more subjects?");
                 String arrayAnswer = answer.next();
                 if (arrayAnswer.equals("yes")){
@@ -94,7 +109,6 @@ public class teacher extends Person {
             } ;
         }
         while(!x);
-
 
 
     };
