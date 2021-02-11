@@ -1,22 +1,22 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class teacher extends Person {
-    public static String name;
-    public static int age;
-    public static String answer;
+public class teacher extends person {
+    public static String name = person.name;
+    public static int age = person.age;
     String mail;
     String subject;
+    int docentID;
 
     void freshstart () {
         boolean original = true;
-        ArrayList subjects = new ArrayList();
+        ArrayList<String> subjects = new ArrayList<>();
         Scanner subput = new Scanner(System.in);
        do {
            boolean x = true;
            boolean b = true;
            boolean a = true;
-           System.out.println("What subjects do you give? (Math, Science, Dutch, English, France," +
+           System.out.println("What subjects do you give? Enter 1 subject, you can add more afterwards (Math, Science, Dutch, English, France," +
                    " IT, PE, Biology, Economics)");
            Scanner answer = new Scanner(System.in);
            subject = subput.nextLine();
@@ -49,8 +49,11 @@ public class teacher extends Person {
                    x = false;
                }
 
+               String subjectWords = (subjects.toString().replace("[", "").replace("]", ""));
+
                do {
-                   System.out.println("So you teach the subject(s) " + subjects +" is that corect?" );
+
+                   System.out.println("So you teach the subject(s) " + subjectWords +" is that corect?" );
                    Scanner verify = new Scanner(System.in);
                    String verified = verify.nextLine();
                    if (verified.equals("Yes") || verified.equals("yes")){
@@ -70,11 +73,23 @@ public class teacher extends Person {
 
        } while (!original);
 
+        System.out.println("What is your mailadress?");
+        Scanner contact = new Scanner(System.in);
+        mail = contact.nextLine();
+
         System.out.println("Here is a quick summary:");
+        System.out.println();
+        System.out.println("Your name is "+ name + " and you are "+ age + " years old.");
+        System.out.println("Your mailadress is: "+ mail+".");
+        System.out.println("And these are the lessons you give:");
+         for (int i=1, a=0 ; i<subjects.size()+1; i++, a++){
+            System.out.println("Lesson "+ i +": "+ subjects.get(a));
+        }
     }
 
 
     void allready(){
+
 
     };
 }

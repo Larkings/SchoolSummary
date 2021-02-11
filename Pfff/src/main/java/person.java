@@ -1,15 +1,17 @@
 import java.util.Scanner;
 
-public class Person {
+public class person {
     public static String name;
     public static int age;
     public static String answer;
 
-    public static void begin() {
+    public void begin() {
         String state;
         boolean x = false;
         Scanner nameput = new Scanner(System.in);
-        System.out.println("Hello, what is your name?");
+        System.out.println("Hello, this is a Classsummary program where you can see your information about your class " +
+                "and subjects you follow.");
+        System.out.println("Could you tell me your name?");
         name = nameput.nextLine();
         Scanner ageput = new Scanner(System.in);
         System.out.println("Hello " + name);
@@ -31,22 +33,11 @@ public class Person {
                             case "Teacher", "teacher" -> {
                                 teacher teacher = new teacher();
                                 teacher.freshstart();
-
-
                                 x = true;
                             }
                             case "Student", "student" -> {
-
-
-
-
-
-
-
-
-
-
-                                System.out.println("kip");
+                                student student = new student();
+                                student.start();
                                 x = true;
                             }
                             default -> System.out.println("Still waiting for the right answer bruv, why are you doubting. Just say yes or no.");
