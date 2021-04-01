@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class student extends person {
+/*ublic class student123 extends person123 {
     String lesson;
     int amount;
 
@@ -81,5 +81,6 @@ public class student extends person {
 
     };
 
+    }
 
-}
+*/

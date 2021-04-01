@@ -1,14 +1,14 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class teacher extends person {
-    public static String name = person.name;
-    public static int age = person.age;
+public class Teacher extends person123 {
+    public static String name = person123.name;
+    public static int age = person123.age;
     String mail;
     String subject;
     int docentID;
 
-    void freshstart () {
+    public static Teacher freshstart () {
         boolean original = true;
         ArrayList<String> subjects = new ArrayList<>();
         Scanner subput = new Scanner(System.in);

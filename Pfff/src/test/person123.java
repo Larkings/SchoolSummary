@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class person {
+/*public class person123 {
     public static String name;
     public static int age;
     public static String answer;
@@ -31,12 +31,12 @@ public class person {
                         state = yesStatePut.nextLine();
                         switch (state) {
                             case "Teacher", "teacher" -> {
-                                teacher teacher = new teacher();
+                                teacher123 teacher = new teacher123();
                                 teacher.freshstart();
                                 x = true;
                             }
                             case "Student", "student" -> {
-                                student student = new student();
+                                student123 student = new student123();
                                 student.start();
                                 x = true;
                             }
@@ -81,4 +81,4 @@ public class person {
         while (!x);
 
     }
-}
+}*/
