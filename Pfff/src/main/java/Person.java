@@ -14,13 +14,12 @@ public abstract class Person {
 
     }
 
-    public Person(String id, String name){
+    public Person(String id){
         this.id = id;
-        this.name = name;
     }
 
 
-    public String getname() {
+    public String getName() {
         return name;
     }
 
@@ -42,5 +41,9 @@ public abstract class Person {
 
     public String getRole () {
         return this.role;
+    }
+
+    public String getId(){
+        return id;
     }
 }

@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Teacher extends Person implements Presence{
 
     private String subjectGiven;
@@ -6,9 +8,13 @@ public class Teacher extends Person implements Presence{
     private String subjectFollow;
     private boolean passed;
     private String teacherRole = "teacher";
+    private static ArrayList Teachers = new ArrayList();
+    public Teacher(){
 
-    public Teacher(String id, String name) {
-        super(id, name);
+    };
+
+    public Teacher(String id) {
+        super(id);
         this.setRole(teacherRole);
     }
 
