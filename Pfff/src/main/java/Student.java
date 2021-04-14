@@ -1,33 +1,27 @@
 
 
 public class Student extends Person implements Presence{
-    private String subjectFollow;
-    private String studentRole = "student";
+
+    public Student(String id, String name, String role, String email,String inGen, String inBirthDate, String inSub) {
+        super.setId(id);
+        super.setName(name);
+        super.setRole(role);
+        super.setEmail(email);
+        super.setGender(inGen);
+        super.setBirthday(inBirthDate);
+        super.setSubject(inSub);
 
 
-
-    public Student(String id)
-    { super(id);
-    this.setRole(studentRole);
     }
 
     public Student() {
 
     }
 
-    public void learn(){
-    }
-    public void attending() { }
 
-    public void register() {
-
-    }
-
-    public void setId(int id) {
-        /* als studentid goed wordt ingevuld wordt de opgegegeven studentid opgeslagen.
-     Mocht de studentid null zijn wordt er een nieuwe gegenereerd.
-                   */
-    }
+    public String getSubjectFollow(){
+        return super.getSubject();
+    };
 
     @Override
     public void introduce() {

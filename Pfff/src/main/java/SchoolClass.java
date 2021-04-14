@@ -1,70 +1,75 @@
-import javax.xml.transform.stream.StreamSource;
+import java.util.ArrayList;
 
 public class SchoolClass {
 
-    private String schoolClassName;
-    private int studentInClass;
-    private Student [] students;
-
     public static final int MAX_AANTAL_STUDENTEN = 21;
+    private Teacher teacher;
+    private ArrayList<Student> students = new ArrayList<>();
+    private String year;
+    private String schoolClassName;
 
-
-    public SchoolClass(String schoolClassName){
+    SchoolClass(String year, String schoolClassName, Teacher teacher, ArrayList<Student> students) {
+        this.teacher = teacher;
+        this.students = students;
+        this.year = year;
         this.schoolClassName = schoolClassName;
-        this.studentInClass =studentInClass;
-        this.students = new Student[MAX_AANTAL_STUDENTEN];
-
     }
 
-    public boolean addStudent(Student student){
-        if (this.studentInClass >= this.students.length){
-            return false;
+    public void addOneStudent(Student student){
+        students.add(student);
+    }
+
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void replaceTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+
+    public ArrayList<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(ArrayList<Student> students) {
+        this.students = students;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public String getSchoolClassName() {
+        return schoolClassName;
+    }
+
+    public void setSchoolClassName(String schoolClassName) {
+        this.schoolClassName = schoolClassName;
+    }
+
+
+    public Person getPersonById(String inID){
+        Person foundPerson = null;
+
+        ArrayList<Person> persons = new ArrayList<>();
+        persons.add(this.teacher);
+        persons.addAll(this.students);
+
+        for (Person person : persons) {
+            if (person.getId().equals(inID)) {
+                foundPerson = person;
+            }
         }
-
-        this.students[this.studentInClass] = student;
-        this.studentInClass++;
-
-        return true;
+        return foundPerson;
     }
 
 }
 
-
-
-    //private String teacherName;
-    //    private String studentName;
-    //    private String subject;
-    //
-    //
-    //
-    //    public void lessonStart(){
-    //        System.out.println("test");
-    //    }
-    //
-    //    public String getTeacherName() {
-    //        return teacherName;
-    //    }
-    //
-    //    public String getStudentName(){
-    //        return studentName;
-    //    }
-    //
-    //
-    //    public int getStudentInClass() {
-    //        return studentInClass;
-    //    }
-    //
-    //    public String getSchoolClassName() {
-    //        return schoolClassName;
-    //    }
-    //
-    //    public String setSchoolClassName(){
-    //        return schoolClassName;
-    //    }
-    //
-    //    public String getSubject(){
-    //        return subject;
-    //    }
 
 
 
