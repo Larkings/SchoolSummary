@@ -68,7 +68,7 @@ public abstract class Person {
         this.birthday = birthday ;
     }
 
-    public void setSubject(String subjectFollow){
+    public void setSubject(String subject){
         this.subject = subject;
     }
 
