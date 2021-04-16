@@ -1,0 +1,15 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/../../../../../../:\Users\us85sq\IdeaProjects\larbi-lloyd-tentamen\.idea/dataSources/
+/dataSources.local.xml
+# Zeppelin ignored files
+/ZeppelinRemoteNotebooks/
+# Editor-based HTTP Client requests
+/httpRequests/
+/larbi-lloyd-tentamen.iml
+/misc.xml
+/modules.xml
+/vcs.xml
+/aws.xml
