@@ -1,4 +1,4 @@
-package java;
+package javaPackage;
 
 public abstract class Person {
     private String id;

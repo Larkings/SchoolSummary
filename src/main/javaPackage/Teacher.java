@@ -1,4 +1,4 @@
-package java;
+package javaPackage;
 
 public class Teacher extends Person implements Presence{
 
