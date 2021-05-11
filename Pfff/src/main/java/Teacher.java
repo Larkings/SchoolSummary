@@ -2,10 +2,6 @@
 
 public class Teacher extends Person implements Presence{
 
-    private boolean pass;
-    private boolean passed;
-    public Teacher() { };
-
     public Teacher(String id, String name, String role, String email, String birthDate, String gender, String subjectTaught) {
         super.setId(id);
         super.setName(name);
@@ -25,4 +21,16 @@ public class Teacher extends Person implements Presence{
     public String getSubject() {
         return "I'm teaching the subject: " + super.getSubject();
     }
+
+    public void greetings(){
+        System.out.println("You're ready for this schoolyear!");
+    }
+
+    @Override
+    public void register() {
+        System.out.println("You're registered for the new schoolkids");
+    }
+
+    ;
+
 }

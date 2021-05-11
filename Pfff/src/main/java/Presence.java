@@ -1,10 +1,6 @@
 public interface Presence {
 
-    private void attending() {
+    public void greetings();
 
-    }
-
-    private void register() {
-
-    }
+    public void register();
 }

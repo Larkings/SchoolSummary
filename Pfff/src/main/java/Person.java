@@ -50,7 +50,7 @@ public abstract class Person {
 
     public void setRole(String role){
       this.role = role;
-    };
+    }
 
     public String getId(){
         return id;

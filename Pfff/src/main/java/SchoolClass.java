@@ -4,7 +4,7 @@ public class SchoolClass {
 
     public static final int MAX_AANTAL_STUDENTEN = 21;
     private Teacher teacher;
-    private ArrayList<Student> students = new ArrayList<>();
+    private ArrayList<Student> students;
     private String year;
     private String schoolClassName;
 
@@ -18,7 +18,6 @@ public class SchoolClass {
     public void addOneStudent(Student student){
         students.add(student);
     }
-
 
     public Teacher getTeacher() {
         return teacher;
@@ -51,7 +50,6 @@ public class SchoolClass {
     public void setSchoolClassName(String schoolClassName) {
         this.schoolClassName = schoolClassName;
     }
-
 
     public Person getPersonById(String inID){
         Person foundPerson = null;
