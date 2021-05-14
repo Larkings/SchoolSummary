@@ -1,4 +1,4 @@
-package javaPackage;
+package nl.hva.schoolSummary;
 
 public abstract class Person {
     private String id;
@@ -13,13 +13,6 @@ public abstract class Person {
 
     public Person(){
 
-    }
-
-    public Person(String id, String name, String role, String email){
-        this.id = id;
-        this.name = name;
-        this.role = role;
-        this.email = email;
     }
 
     public String getName() {

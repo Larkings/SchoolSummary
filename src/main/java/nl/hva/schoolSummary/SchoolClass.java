@@ -1,4 +1,4 @@
-package javaPackage;
+package nl.hva.schoolSummary;
 
 import java.util.ArrayList;
 
@@ -7,10 +7,10 @@ public class SchoolClass {
     public static final int MAX_AANTAL_STUDENTEN = 21;
     private Teacher teacher;
     private ArrayList<Student> students;
-    private String year;
+    private int year;
     private String schoolClassName;
 
-    SchoolClass(String year, String schoolClassName, Teacher teacher, ArrayList<Student> students) {
+    SchoolClass(int year, String schoolClassName, Teacher teacher, ArrayList<Student> students) {
         this.teacher = teacher;
         this.students = students;
         this.year = year;
@@ -37,11 +37,11 @@ public class SchoolClass {
         this.students = students;
     }
 
-    public String getYear() {
+    public int getYear() {
         return year;
     }
 
-    public void setYear(String year) {
+    public void setYear(int year) {
         this.year = year;
     }
 

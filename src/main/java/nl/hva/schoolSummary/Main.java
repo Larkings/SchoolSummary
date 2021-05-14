@@ -1,4 +1,4 @@
-package javaPackage;
+package nl.hva.schoolSummary;
 
 public class Main {
 

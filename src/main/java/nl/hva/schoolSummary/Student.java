@@ -1,4 +1,4 @@
-package javaPackage;
+package nl.hva.schoolSummary;
 
 public class Student extends Person implements Presence{
 
@@ -38,17 +38,16 @@ public class Student extends Person implements Presence{
 
     @Override
     public String getSubject() {
-        return "I'm following the subject: " + super.getSubject();
+        return "You're following the subject: " + super.getSubject();
     }
 
-    public void greetings(){
-        System.out.println("You're ready for this schoolyear!");
+    public String greetings(){
+        return "You're ready for this schoolyear!";
     }
 
     @Override
-    public void register() {
-        System.out.println("You're registered for the new schoolyear");
-
+    public String register() {
+        return "You're registered for the new schoolyear";
     }
 
     ;
