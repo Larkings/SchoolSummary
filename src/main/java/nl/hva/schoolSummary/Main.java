@@ -11,5 +11,6 @@ public class Main {
         Person c = new Student();
         Student.view(c);
 
+
     }
 }

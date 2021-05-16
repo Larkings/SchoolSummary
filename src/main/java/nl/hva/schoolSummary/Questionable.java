@@ -8,6 +8,7 @@ import java.util.function.Function;
 import java.io.File;
 import java.io.IOException;
 import java.io.FileWriter;
+import io.javalin.Javalin;
 
 
 public class Questionable {
@@ -41,6 +42,9 @@ public class Questionable {
         students1.add(new Student("846564", "Marjoleine", "Student", "Marjoleine.Croese@hva.nl","F","04-05-2021","Science"));
 
         H3B = new SchoolClass(2021, "H3B", romeo, students1);
+
+        Javalin app = Javalin.create().start(7000);
+        app.get("/", ctx -> ctx.result(currentClass()));
         
     }
 
@@ -67,7 +71,6 @@ public class Questionable {
         System.out.println("What is your ID, otherwise type in 'none'");
         String inID = new Scanner(System.in).nextLine();
         Person foundPerson = H3B.getPersonById(inID);
-
         if (foundPerson != null) {
             try {
                 File myObj = new File("registrationForm.md");
@@ -258,7 +261,7 @@ public class Questionable {
         sb.append("And here are the students of the class ").append(H3B.getSchoolClassName()).append(" accompanied with their mail: \n");
         sb.append("\n");
         sb.append(showStudentsInClass());
-        sb.append(H3B.getTeacher().greetings()).append(".\n");
+        sb.append(H3B.getTeacher().greetings()).append("\n");
 
         return sb.toString();
     }
@@ -278,13 +281,13 @@ public class Questionable {
         sb.append(H3B.getStudents().get(H3B.getStudents().size() -1).register()).append(".\n");
         sb.append("\n");
         sb.append("The class you're added to for year ").append(H3B.getYear()).append(" is ").append(H3B.getSchoolClassName()).append(".\n");
-        sb.append(numberAmountClass.apply(H3B.getStudents().size())).append(".\n");
+        sb.append(numberAmountClass.apply(H3B.getStudents().size())).append("\n");
         sb.append("Your teacher is: ").append(H3B.getTeacher().getName()).append(" ,and the mail of your teacher is: ").append(H3B.getTeacher().getEmail()).append(".\n");
-        sb.append("And here are the other students in the same class ").append(H3B.getSchoolClassName()).append(" accompanied with their mail: ").append(".\n");
+        sb.append("And here are the other students in the same class ").append(H3B.getSchoolClassName()).append(" accompanied with their mail: ").append("\n");
         sb.append("\n");
         sb.append(showStudentsInClass());
         sb.append("\n");
-        sb.append(H3B.getStudents().get(H3B.getStudents().size() -1).greetings()).append(".\n");
+        sb.append(H3B.getStudents().get(H3B.getStudents().size() -1).greetings()).append("\n");
 
         return sb.toString();
     }
@@ -295,6 +298,19 @@ public class Questionable {
         for (int i = 0; i <(H3B.getStudents().size()-1); i++ )
             result.append(H3B.getStudents().get(i).getName()).append(", ").append(H3B.getStudents().get(i).getEmail()).append(".\n");
         return result.toString();
+    }
+
+    private String currentClass(){
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("This is class ").append(H3B.getSchoolClassName()).append(" for the year ").append(H3B.getYear()).append(". \n");
+        sb.append(numberAmountClass.apply(H3B.getStudents().size()));
+        sb.append("The teacher of ").append(H3B.getSchoolClassName()).append(" is ").append(H3B.getTeacher().getName()).append(".\n");
+        sb.append("And here are the students of the class ").append(H3B.getSchoolClassName()).append(" accompanied with their mail: \n");
+        sb.append("\n");
+        sb.append(showStudentsInClass());
+
+        return sb.toString();
     }
 
     public static Function<Integer, String> numberAmountClass = (number) -> {
