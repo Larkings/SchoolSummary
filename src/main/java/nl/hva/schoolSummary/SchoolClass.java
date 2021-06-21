@@ -1,24 +1,44 @@
 package nl.hva.schoolSummary;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class SchoolClass {
 
     public static final int MAX_AANTAL_STUDENTEN = 21;
     private Teacher teacher;
-    private ArrayList<Student> students;
+    private final ArrayList<Student> students;
+    private ArrayList<Student> students2;
     private int year;
-    private String schoolClassName;
+    private final String schoolClassName;
+    public ReserveClass H3B_reserves;
 
-    SchoolClass(int year, String schoolClassName, Teacher teacher, ArrayList<Student> students) {
+    public SchoolClass(int year, String schoolClassName, Teacher teacher, ArrayList<Student> students) {
         this.teacher = teacher;
         this.students = students;
         this.year = year;
         this.schoolClassName = schoolClassName;
     }
 
-    public void addOneStudent(Student student){
-        students.add(student);
+    /**
+     * The addOneStudent method will ad a new student to the class in case there is still a spot left.
+     * In case there isn't a spot left the student will be added to the reserve class which is a shortlist in case before the start of the year somebody decides to not attend the class.
+     * Otherwise you'll automatically be added to the schoolclass for next year.
+     */
+
+    public void addOneStudent(Student student) throws Exception {
+        if (students.size() >= MAX_AANTAL_STUDENTEN ){
+            StringBuilder sb = new StringBuilder();
+            sb.append(MAX_AANTAL_STUDENTEN);
+            ArrayList<Student> students2 = new ArrayList<>();
+            this.students2 = students2;
+            students2.add(student);
+            H3B_reserves = new ReserveClass (getYear(),getSchoolClassName()+" Reserve",getTeacher(),getStudents2());
+           throw new IOException ("There are currently "+ sb +" students in the class, the class is full. \n"+
+                   "You'll be added to "+H3B_reserves.getSchoolClassName()+".\n");
+        } else{
+            students.add(student);
+        }
     }
 
     public Teacher getTeacher() {
@@ -33,10 +53,6 @@ public class SchoolClass {
         return students;
     }
 
-    public void setStudents(ArrayList<Student> students) {
-        this.students = students;
-    }
-
     public int getYear() {
         return year;
     }
@@ -47,10 +63,6 @@ public class SchoolClass {
 
     public String getSchoolClassName() {
         return schoolClassName;
-    }
-
-    public void setSchoolClassName(String schoolClassName) {
-        this.schoolClassName = schoolClassName;
     }
 
     public Person getPersonById(String inID){
@@ -66,6 +78,10 @@ public class SchoolClass {
             }
         }
         return foundPerson;
+    }
+
+    public ArrayList<Student> getStudents2() {
+        return students2;
     }
 
 }

@@ -85,7 +85,10 @@ Bewijs:  [linknaarhetbronbestandinjerepo](https://gitlab.fdmci.hva.nl/repo-van-j
 ##### 2. Abstract class 'A' correct geïmplementeerd
 
 ```java
-Plaats hier je code snippets
+public abstract class Person { 
+    
+}
+
 ```
 
 Bewijs:  [linknaarhetbronbestandinjerepo](https://gitlab.fdmci.hva.nl/repo-van-jou)
@@ -93,7 +96,13 @@ Bewijs:  [linknaarhetbronbestandinjerepo](https://gitlab.fdmci.hva.nl/repo-van-j
 ##### 3. Subclass implementeert abstract class
 
 ```
-Plaats hier je code snippets
+public class Student extends Person implements Presence{
+    
+}
+
+public class Teacher extends Person implements Presence{
+    
+}
 ```
 
 Bewijs:  [linknaarhetbronbestandinjerepo](https://gitlab.fdmci.hva.nl/repo-van-jou)
@@ -101,7 +110,13 @@ Bewijs:  [linknaarhetbronbestandinjerepo](https://gitlab.fdmci.hva.nl/repo-van-j
 ##### 4. Interface correct geïmplementeerd.
 
 ```java
-Plaats hier je code snippets
+public class Student extends Person implements Presence{
+
+}
+
+public class Teacher extends Person implements Presence{
+
+}
 ```
 
 Bewijs:  [linknaarhetbronbestandinjerepo](https://gitlab.fdmci.hva.nl/repo-van-jou)
@@ -109,7 +124,13 @@ Bewijs:  [linknaarhetbronbestandinjerepo](https://gitlab.fdmci.hva.nl/repo-van-j
 ##### 5. Er is een klasse aanwezig met minimaal twee constructors
 
 ```java
-Plaats hier je code snippets
+H3B = new SchoolClass(2021, "H3B", romeo, students);
+
+H3B.replaceTeacher(new Teacher(getRandomNumberString(), inName, intype, inMail, inBirthDate, inGen,inteach));
+
+H3B.addOneStudent(new Student(getRandomNumberString(), inName, intype, inMail,inGen, inBirthDate, inSub));
+
+
 ```
 
 Bewijs:  [linknaarhetbronbestandinjerepo](https://gitlab.fdmci.hva.nl/repo-van-jou)
@@ -125,7 +146,15 @@ Bewijs:  [linknaarhetbronbestandinjerepo](https://gitlab.fdmci.hva.nl/repo-van-j
 ##### 7. `super` keyword gebruikt voor aanroep methode
 
 ```java
-Plaats hier je code snippets
+public Student(String id, String name, String role, String email,String inGen, String inBirthDate, String inSub) {     
+    super.setId(id);
+    super.setName(name);
+    super.setRole(role);
+    super.setEmail(email);
+    super.setGender(inGen);
+    super.setBirthday(inBirthDate);
+    super.setSubject(inSub);
+}
 ```
 
 Bewijs:  [linknaarhetbronbestandinjerepo](https://gitlab.fdmci.hva.nl/repo-van-jou)
@@ -133,7 +162,16 @@ Bewijs:  [linknaarhetbronbestandinjerepo](https://gitlab.fdmci.hva.nl/repo-van-j
 ##### 8. `instanceof` aangetoond
 
 ```java
-Plaats hier je code snippets
+public static void view (Person c) {
+    if (c instanceof Student) {
+        Student b1 = (Student ) c;
+        b1.check();
+    }
+}
+
+Person c = new Student();
+Student.view(c);
+
 ```
 
 Bewijs:  [linknaarhetbronbestandinjerepo](https://gitlab.fdmci.hva.nl/repo-van-jou)
@@ -161,6 +199,9 @@ Plaats hier je meest ingewikkelde stukje code met javadoc,en normaal commentaar
 ```
 
 Bewijs:  [linknaarhetbronbestandinjerepo](https://gitlab.fdmci.hva.nl/repo-van-jou)
+
+
+
 
 #### OOP2
 

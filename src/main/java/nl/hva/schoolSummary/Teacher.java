@@ -2,6 +2,10 @@ package nl.hva.schoolSummary;
 
 public class Teacher extends Person implements Presence{
 
+    public Teacher() {
+
+    }
+
     public Teacher(String id, String name, String role, String email, String birthDate, String gender, String subjectTaught) {
         super.setId(id);
         super.setName(name);

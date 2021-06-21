@@ -50,7 +50,5 @@ public class Student extends Person implements Presence{
         return "You're registered for the new schoolyear";
     }
 
-    ;
-
 
 }

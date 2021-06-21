@@ -2,7 +2,7 @@ package nl.hva.schoolSummary;
 
 public interface Presence {
 
-    public String greetings();
+    String greetings();
 
-    public String register();
+    String register();
 }
